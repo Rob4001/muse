@@ -29,7 +29,7 @@
     "env:set-database-url": "tsx src/scripts/run-with-database-url.ts",
     "release": "release-it",
     "build": "tsc",
-    "postinstall": "patch-package && husky"
+    "postinstall": "patch-package && node .husky/install.mjs"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.7",
