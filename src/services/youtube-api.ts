@@ -153,7 +153,6 @@ export default class {
         },
       };
 
-      // eslint-disable-next-line no-await-in-loop
       const {items, nextPageToken} = await this.cache.wrap(
         async () => this.got('playlistItems', playlistItemsParams).json() as Promise<PlaylistItemsResponse>,
         playlistItemsParams,

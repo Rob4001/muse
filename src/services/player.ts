@@ -1,6 +1,6 @@
 import {VoiceChannel, Snowflake} from 'discord.js';
 import {Readable} from 'stream';
-import hasha from 'hasha';
+import {hashSync as hasha} from 'hasha';
 import ytdl, {videoFormat} from '@distube/ytdl-core';
 import {WriteStream} from 'fs-capacitor';
 import ffmpeg from 'fluent-ffmpeg';
@@ -107,7 +107,6 @@ export default class {
 
     // Workaround to disable keepAlive
     this.voiceConnection.on('stateChange', (oldState, newState) => {
-      /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
       const oldNetworking = Reflect.get(oldState, 'networking');
       const newNetworking = Reflect.get(newState, 'networking');
 
@@ -118,7 +117,6 @@ export default class {
 
       oldNetworking?.off('stateChange', networkStateChangeHandler);
       newNetworking?.on('stateChange', networkStateChangeHandler);
-      /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 
       this.currentChannel = channel;
       if (newState.status === VoiceConnectionStatus.Ready) {

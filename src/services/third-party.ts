@@ -7,7 +7,6 @@ import Config from './config.js';
 @injectable()
 export default class ThirdParty {
   readonly spotify: SpotifyWebApi;
-
   private spotifyTokenTimerId?: NodeJS.Timeout;
 
   constructor(@inject(TYPES.Config) config: Config) {

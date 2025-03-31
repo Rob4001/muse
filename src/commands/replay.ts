@@ -10,9 +10,7 @@ export default class implements Command {
   public readonly slashCommand = new SlashCommandBuilder()
     .setName('replay')
     .setDescription('replay the current song');
-
   public requiresVC = true;
-
   private readonly playerManager: PlayerManager;
 
   constructor(@inject(TYPES.Managers.Player) playerManager: PlayerManager) {

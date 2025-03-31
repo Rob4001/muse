@@ -54,7 +54,6 @@ export default class {
     }
 
     // Register event handlers
-    // eslint-disable-next-line complexity
     this.client.on('interactionCreate', async interaction => {
       try {
         if (interaction.isCommand()) {
@@ -109,7 +108,7 @@ export default class {
           } else if (interaction.isCommand() || interaction.isButton()) {
             await interaction.reply({content: errorMsg(error as Error), ephemeral: true});
           }
-        } catch {}
+        } catch { /* empty */ }
       }
     });
 

@@ -1,4 +1,4 @@
-import makeDir from 'make-dir';
+import {makeDirectory as makeDir} from 'make-dir';
 import path from 'path';
 import container from './inversify.config.js';
 import {TYPES} from './types.js';
